@@ -5,11 +5,14 @@ class Potencia{
         Scanner sc = new Scanner(System.in);
         int base = sc.nextInt();
         int exp = sc.nextInt();
-
+        sc.close();
+        
         System.out.println(pow(base,exp));
     }
 
     public static int pow(int base, int exp){
-        return (exp==0) ? 1 : pow(base, exp-1)*base;
+        if (exp==0) 
+            return 1; 
+        return pow(base, exp-1)*base;
     }
 }
